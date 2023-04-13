@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, use_build_context_synchronously
 
 import 'package:chat/componantes/componantes.dart';
 import 'package:chat/screens/chat_screen.dart';
