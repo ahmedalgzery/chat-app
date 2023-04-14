@@ -1,9 +1,13 @@
+import 'package:chat/cubits/chat_cubit/chat_cubit.dart';
+import 'package:chat/cubits/login_cubit/login_cubit.dart';
+import 'package:chat/cubits/register_cubit/register_cubit.dart';
 import 'package:chat/firebase_options.dart';
 import 'package:chat/screens/chat_screen.dart';
 import 'package:chat/screens/login_screen.dart';
 import 'package:chat/screens/register_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +22,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Scholar Chat',
-      debugShowCheckedModeBanner: false,
-      routes: {
-        LoginScreen.id: (context) => const LoginScreen(),
-        RegisterScreen.id: (context) => const RegisterScreen(),
-        ChatScreen.id: (context) =>  ChatScreen()
-      },
-      home:  const LoginScreen(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => LoginCubit(),
+        ),
+        BlocProvider(
+          create: (context) => RegisterCubit(),
+        ),
+        BlocProvider(
+          create: (context) => ChatCubit(),
+          ),
+      ],
+      child: MaterialApp(
+        title: 'Scholar Chat',
+        debugShowCheckedModeBanner: false,
+        routes: {
+          LoginScreen.id: (context) => LoginScreen(),
+          RegisterScreen.id: (context) => RegisterScreen(),
+          ChatScreen.id: (context) => ChatScreen()
+        },
+        home: LoginScreen(),
+      ),
     );
   }
 }
