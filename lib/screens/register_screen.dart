@@ -5,7 +5,6 @@ import 'package:chat/constatns.dart';
 import 'package:chat/cubits/register_cubit/register_cubit.dart';
 import 'package:chat/cubits/register_cubit/register_state.dart';
 import 'package:chat/screens/chat_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';

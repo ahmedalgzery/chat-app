@@ -1,11 +1,10 @@
-// ignore_for_file: unused_local_variable, use_build_context_synchronously
+// ignore_for_file: unused_local_variable, use_build_context_synchronously, must_be_immutable
 
 import 'package:chat/componantes/componantes.dart';
 import 'package:chat/cubits/chat_cubit/chat_cubit.dart';
 import 'package:chat/cubits/login_cubit/login_cubit.dart';
 import 'package:chat/screens/chat_screen.dart';
 import 'package:chat/screens/register_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';

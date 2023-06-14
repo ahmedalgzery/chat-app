@@ -1,4 +1,3 @@
-import 'package:chat/models/message.dart';
 
 abstract class ChatState {}
 
